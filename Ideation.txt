@@ -1,0 +1,8 @@
+Technology:
+- Client Side: React with TypeScript and Tailwind
+- Server Side: Node with TypeScript and Express (?), with MongoDB for database (?)
+- Machine Learning Integrations: N/A
+Product:
+- A matchmaker app that exposes different amount of information, using an iceberg model
+- Level 0 (Totally Visible): Pictures, name, location
+- Level 1 (Visible after match): 
