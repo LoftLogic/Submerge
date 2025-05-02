@@ -1,0 +1,17 @@
+Technology:
+- Client Side: React with TypeScript and Tailwind
+- Server Side: Node with TypeScript and Express (?), with MongoDB for database (?)
+- Machine Learning Integrations: Langchain
+
+Product:
+- A matchmaker app that exposes different amount of information, using an iceberg model
+- Level 0 (Totally Visible): Pictures, name, location
+- Level 1 (Visible after match): 
+- Level 2 (Only Visible for Server Side AI):  
+
+To-Do:
+- Get a good UI Design/Aesthetic
+- Create a basic React app
+- Design backend compatibility algorithms
+- Ideate the iceberg model
+- Do reasearch on dating app market research/dating psychology

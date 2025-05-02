@@ -32,7 +32,6 @@ type Gender = 'male' | 'female' | 'other';
 type Sexuality = 'straight' | 'homosexual' | 'bisexual';
 type Ethnicity = 'Caucasian' | 'East Asian' | 'Southeast Asian' | 'South Asian' | 'African' | 'Latino' | 'Middle Eastern' | 'Native American' | 'Pacific Islander';
 
-
 interface User {
     id: string;
     name: string;
