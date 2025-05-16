@@ -1,0 +1,14 @@
+Server source code structure diagram:
+
+/src
+|--> /api: HTTP calls
+|  |--> /routes: Express route definitions, mapped to controller functions
+|  |--> /middelware: Intercepts requests before they hit the controllers (e.g. user auth)
+|--> /services: buisness Logic
+|  |--> /algorithms: compatibility or feed algorithms
+|  |--> /machine-learning: all AI implementations will go here (for now)
+|--> /controllers: bridge route and buisness logic (Lucia Nuenez will be proud)
+|--> /types: store interfaces and other types
+|--> /models: ORM and schema definitions
+|--> /database: data access
+index.ts 

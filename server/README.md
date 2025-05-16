@@ -39,3 +39,18 @@ npm run dev
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build the TypeScript code
 - `npm start` - Start the production server 
+
+## Code Structure
+The code structure appears as follows:
+/src
+|--> /api: HTTP calls
+|  |--> /routes: Express route definitions, mapped to controller functions
+|  |--> /middelware: Intercepts requests before they hit the controllers (e.g. user auth)
+|--> /services: buisness Logic
+|  |--> /algorithms: compatibility or feed algorithms
+|  |--> /machine-learning: all AI implementations will go here (for now)
+|--> /controllers: bridge route and buisness logic (Lucia Nuenez will be proud)
+|--> /types: store interfaces and other types
+|--> /models: ORM and schema definitions
+|--> /database: data access
+index.ts 
