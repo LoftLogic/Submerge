@@ -1,5 +1,5 @@
-export type Gender = 'male' | 'female' | 'other';
-export type Sexuality = 'straight' | 'homosexual' | 'bisexual';
+export type Gender = 'Male' | 'Female' | 'Other';
+export type Sexuality = 'Straight' | 'Homosexual' | 'Bisexual';
 export type Ethnicity = 'Caucasian' | 'East Asian' | 'Southeast Asian' | 'South Asian' | 'African' | 'Latino' | 'Middle Eastern' | 'Native American' | 'Pacific Islander';
 
 export interface User {
