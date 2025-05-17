@@ -7,21 +7,32 @@ function BuddyPage() {
     { text: "Hi! I'm your Submerge buddy. How are you feeling today?", isBot: true }
   ]);
   const [inputText, setInputText] = useState('');
+  const [isListening, setIsListening] = useState(false);
+  const [isPulsing, setIsPulsing] = useState(true);  // Start with welcome pulse
+
+  useEffect(() => {
+    // Stop pulsing after welcome message animation
+    const timer = setTimeout(() => {
+      setIsPulsing(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputText.trim()) return;
 
-    // Add user message
     setMessages(prev => [...prev, { text: inputText, isBot: false }]);
+    setIsListening(true);
 
-    // Simulate bot response (replace with actual chatbot logic later)
+    // Simulate bot response
     setTimeout(() => {
       setMessages(prev => [...prev, { 
         text: "Thanks for sharing! I'm here to chat and help you navigate your journey.", 
         isBot: true 
       }]);
-    }, 1000);
+      setIsListening(false);
+    }, 2000);
 
     setInputText('');
   };
@@ -29,15 +40,17 @@ function BuddyPage() {
   return (
     <div className="buddy-page">
       <div className="chat-container">
+        <div className="visualization-container">
+          <div className={`pulse-circle ${isListening ? 'listening' : ''} ${isPulsing ? 'welcome' : ''}`}>
+            <div className="inner-circle"></div>
+          </div>
+        </div>
         <div className="messages-container">
           {messages.map((message, index) => (
             <div 
               key={index} 
               className={`message ${message.isBot ? 'bot-message' : 'user-message'}`}
             >
-              {message.isBot && (
-                <div className="bot-avatar">🧊</div>
-              )}
               <div className="message-bubble">
                 {message.text}
               </div>
@@ -237,10 +250,6 @@ function App() {
             </button>
             {isMenuOpen && (
               <div className="menu-dropdown">
-                <div className="menu-item" onClick={() => navigateTo('home')}>
-                  <span>🏠</span>
-                  <span>Home</span>
-                </div>
                 <div className="menu-item" onClick={() => navigateTo('buddy')}>
                   <span>👥</span>
                   <span>Buddy</span>
@@ -256,66 +265,17 @@ function App() {
               </div>
             )}
           </div>
-          <span 
-            className="app-title" 
-            onClick={() => navigateTo('home')} 
-            style={{ cursor: 'pointer' }}
-          >
-            🧊
+          <span className="app-title" onClick={() => navigateTo('buddy')}>
+            submerge
           </span>
-          <button 
-            className="profile-button" 
-            onClick={() => navigateTo('profile')}
-          >
-            Profile
-          </button>
+          <div style={{ width: '70px' }}></div> {/* Spacer to maintain centering */}
         </div>
       </header>
 
-      {currentPage === 'home' ? (
-        <div className="app-container">
-          <div className="info-module">
-            <img 
-              src={userPhoto}
-              alt="Profile" 
-              className="profile-image"
-            />
-            <div className="name-location">
-              <span className="name">Sarah, 25</span>
-              <span className="distance-badge">3 mi away</span>
-            </div>
-            <div className="location">
-              📍 New York City
-            </div>
-          </div>
-
-          <div className="info-module">
-            <h3>Interests</h3>
-            <div className="tags-container">
-              <span className="tag">Artist</span>
-              <span className="tag">Travel</span>
-              <span className="tag">Coffee</span>
-              <span className="tag">Photography</span>
-              <span className="tag">Music</span>
-            </div>
-          </div>
-
-          <div className="info-module">
-            <h3>About</h3>
-            <div className="bio-section">
-              Passionate artist and coffee enthusiast. Love exploring new places and capturing moments through my lens. Looking for someone to share adventures with! 🎨 ✈️ 📸
-            </div>
-          </div>
-
-          <div className="action-buttons">
-            <button className="action-button">✕ Pass</button>
-            <button className="action-button">♥ Like</button>
-          </div>
-        </div>
+      {currentPage === 'home' || currentPage === 'buddy' ? (
+        <BuddyPage />
       ) : currentPage === 'profile' ? (
         <ProfilePage />
-      ) : currentPage === 'buddy' ? (
-        <BuddyPage />
       ) : currentPage === 'settings' ? (
         <SettingsPage />
       ) : (
