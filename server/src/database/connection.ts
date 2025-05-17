@@ -1,5 +1,6 @@
 /**
  * Create connection from the database and configures its enviroment variables.
+ * NOTE: We might end up using firebase instead
  */
 
 import { Sequelize } from 'sequelize';
