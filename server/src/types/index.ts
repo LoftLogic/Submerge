@@ -14,7 +14,33 @@ export interface User {
     ethnicity: Ethnicity[];
     images: string[];
     createdAt: Date;
-};
+    profile: UserProfile;
+}
+
+export interface UserProfile {
+    "Media": MediaInterests;
+    "Personal": PersonalInterests;
+    "Sensual": SensualInterests
+    "Preferences": PreferenceSheet
+}
+
+
+
+export interface PreferenceSheet {
+
+}
+
+export interface MediaInterests {
+
+}
+
+export interface PersonalInterests {
+
+}
+
+export interface SensualInterests {
+
+}
 
 export interface Match {
     id: string,
