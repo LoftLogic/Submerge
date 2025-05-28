@@ -2,6 +2,8 @@
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.21",
+    "cask": "^0.0.0",
+    "flutter": "^0.0.5",
     "package.json": "^2.0.1",
     "postcss": "^8.5.3",
     "react-router-dom": "^7.5.3",
