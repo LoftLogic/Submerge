@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { createUser, getUserById, updateUser, getAllUsers } from '../database/firebase';
-import { User } from '../types';
+import { User } from '../types/user';
 
 
 export const CreateUserController = async (req: Request, res: Response): Promise<void> => {

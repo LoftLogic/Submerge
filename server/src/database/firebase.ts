@@ -1,5 +1,5 @@
 import * as admin from 'firebase-admin';
-import { User, Match } from '../types';
+import { User, Match } from '../types/user';
 
 // You can import service account from a JSON file
 // import serviceAccount from './serviceAccountKey.json';

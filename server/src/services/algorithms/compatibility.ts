@@ -1,4 +1,4 @@
-import { User } from '../../types';
+import { User } from '../../types/user';
 
 export const checkAgeCompatibility = (user1: User, user2: User): boolean => {
     const age1 = user1.age;
