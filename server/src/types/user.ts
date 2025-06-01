@@ -7,7 +7,7 @@ export interface User {
     email: string;
     createdAt: Date;
     updatedAt: Date;
-    profile: UserProfile;
+    profile: UserDisplay; // WILL BE PROFILE LATER, THIS IS JUST FOR TESTING
 }
 
 export interface UserProfile {

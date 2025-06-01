@@ -15,6 +15,10 @@ export const auth = admin.auth();
 
 export default firebaseApp;
 
+export const connectDatabase = () => {
+    return;
+};
+
 export const createUser = (user: User): boolean => {
     return false;
 }
